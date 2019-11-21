@@ -1,5 +1,6 @@
 var express = require('express');
 var proxy = require('express-http-proxy');
+// var proxy = require('http-proxy-middleware');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpack = require('webpack');
 
@@ -30,6 +31,13 @@ if (proxyHost !== '') {
     // Fall back to scratchr2 in development
     // This proxy middleware must come last
     app.use('/', proxy(proxyHost));
+    // app.use('/', proxy({
+    //     target: proxyHost,
+    //     changeOrigin: true,
+    //     headers: {
+    //         'Access-Control-Allow-Origin': '*'
+    //     }
+    // }));
 }
 
 // Start listening

@@ -171,3 +171,35 @@ Additionally, if you set `FALLBACK=https://scratch.mit.edu`, be aware that click
 
 #### Windows
 Some users have experienced difficulties when trying to get our web client to work on Windows. One solution could be to use [Cygwin](https://www.cygwin.com/). If that doesn't work, you might want to use [Wubi](https://wiki.ubuntu.com/WubiGuide) (Windows XP, Vista, 7) or [Wubiuefi](https://github.com/hakuna-m/wubiuefi) (Windows 8 or higher). Wubi(uefi) is a Windows Installer for Ubuntu that allows you to have Ubuntu and Windows on one disk, without the need of an extra partition.
+
+# 二次开发步骤
+
+* 同步官方仓库
+
+```sh
+git clone git@github.com:quoyi/scratch-www.git
+git remote add upstream https://github.com/LLK/scratch-www.git
+git checkout develop
+git fetch upstream
+git merge upstream/develop
+git push origin develop
+```
+
+* 安装依赖并编译打包
+
+```sh
+npm install
+npm run build
+npm run start
+```
+
+* 访问 `http://localhost:8333`
+
+# 辅助
+
+* 删除 Git 分支:
+
+  ```sh
+  > for up in `git branch -l | grep greenkeeper`; do git branch -D $up; done
+  ```
+  

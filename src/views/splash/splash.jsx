@@ -15,6 +15,7 @@ const SplashPresentation = require('./presentation.jsx');
 class Splash extends React.Component {
     constructor (props) {
         super(props);
+        // 绑定事件到 this 上(JavaScript 的函数工作原理)
         bindAll(this, [
             'getNews',
             'handleRefreshHomepageCache',

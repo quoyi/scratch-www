@@ -59,6 +59,8 @@ var writeIntlFile = function (outputDir, view, translations, callback) {
 
 // -----------------------------------------------------------------------------
 // Main script
+// 第一个参数为输入目录 (localesDir)
+// 第二个参数为输出目录 (outputDir)
 // -----------------------------------------------------------------------------
 
 var args = process.argv.slice(2);

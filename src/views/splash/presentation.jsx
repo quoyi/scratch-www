@@ -372,7 +372,7 @@ class SplashPresentation extends React.Component { // eslint-disable-line react/
         const ShowTopBanner = Date.now() < LAUNCH_END_TIME;
         const ShowMiddleBanner = false;
         const ShowSmallTopBanner = false;
-        const featured = this.renderHomepageRows(ShowMiddleBanner);
+        const featured = this.renderHomepageRows(ShowMiddleBanner); // 首页推荐
 
         const formatHTMLMessage = this.props.intl.formatHTMLMessage;
         const formatMessage = this.props.intl.formatMessage;
@@ -400,6 +400,7 @@ class SplashPresentation extends React.Component { // eslint-disable-line react/
 
         return (
             <div className="splash">
+                {/* 是否显示绑定邮箱确认框 */}
                 {this.props.shouldShowEmailConfirmation ? [
                     <DropdownBanner
                         className="warning"
@@ -429,12 +430,16 @@ class SplashPresentation extends React.Component { // eslint-disable-line react/
                         onRequestClose={this.props.onHideEmailConfirmationModal}
                     />
                 ] : []}
+
+                {/* 显示教育者导航条 */}
                 {this.props.isEducator ? [
                     <TeacherBanner
                         key="teacherbanner"
                         messages={messages}
                     />
                 ] : []}
+
+                {/* 用户未登录 */}
                 {
                     this.props.sessionStatus === sessionActions.Status.FETCHED &&
                     Object.keys(this.props.user).length === 0 && // if user is not logged in
@@ -453,6 +458,7 @@ class SplashPresentation extends React.Component { // eslint-disable-line react/
                     ]
                     )
                 }
+                {/* 用户已登录 */}
                 {
                     this.props.sessionStatus === sessionActions.Status.FETCHED &&
                     Object.keys(this.props.user).length !== 0 && // if user is logged in
@@ -467,6 +473,8 @@ class SplashPresentation extends React.Component { // eslint-disable-line react/
                         }
                     </MediaQuery>
                 }
+                
+                {/* 用户已登录,显示欢迎信息 */}
                 <div
                     className="inner mod-splash"
                     key="inner"
@@ -498,8 +506,11 @@ class SplashPresentation extends React.Component { // eslint-disable-line react/
                             />
                         </div>
                     }
+
+                    {/* 首页推荐 */}
                     {featured}
 
+                    {/* 管理员面板 */}
                     {this.props.isAdmin && (
                         <AdminPanel
                             className="splash-admin-panel"
