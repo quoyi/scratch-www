@@ -136,7 +136,10 @@ class Navigation extends React.Component {
                             />
                         </Form>
                     </li>
+
+                    {/* 数据请求已结束 ? 根据请求结果显示 : 什么也不显示 */}
                     {this.props.session.status === sessionActions.Status.FETCHED ? (
+                        // 用户已登录 ? 显示用户消息 : 显示注册登录按钮
                         this.props.user ? [
                             <li
                                 className="link right messages"
@@ -216,6 +219,8 @@ class Navigation extends React.Component {
                             </li>
                         ]) : []
                     }
+
+                    {/* 已显示注册页，且不是 scratch3 注册方式时，显示注册页 */}
                     {this.props.registrationOpen && !this.props.useScratch3Registration && (
                         <Registration
                             key="registration"

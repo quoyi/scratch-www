@@ -172,7 +172,7 @@ Additionally, if you set `FALLBACK=https://scratch.mit.edu`, be aware that click
 #### Windows
 Some users have experienced difficulties when trying to get our web client to work on Windows. One solution could be to use [Cygwin](https://www.cygwin.com/). If that doesn't work, you might want to use [Wubi](https://wiki.ubuntu.com/WubiGuide) (Windows XP, Vista, 7) or [Wubiuefi](https://github.com/hakuna-m/wubiuefi) (Windows 8 or higher). Wubi(uefi) is a Windows Installer for Ubuntu that allows you to have Ubuntu and Windows on one disk, without the need of an extra partition.
 
-# 二次开发步骤
+## 二次开发步骤
 
 * 同步官方仓库
 
@@ -185,17 +185,21 @@ git merge upstream/develop
 git push origin develop
 ```
 
-* 安装依赖并编译打包
+* 安装依赖并运行
 
 ```sh
-npm install
-npm run build
-npm run start
+yarn
+FALLBACK=https://scratch.mit.edu yarn start
 ```
 
 * 访问 `http://localhost:8333`
 
-# 辅助
+## 代码结构分析
+
+* ~~所有~~ 页面组件经过 `src/lib/render.jsx` 处理，添加 `store`、`本地化` 和 `设置挂载点` 后在组件内自渲染（即调用 render 方法）。
+* ~~所有~~ 页面组件在自渲染时已应用 `Page` 组件包装，用于捕获系统错误（Sentry）、设置网站布局、根据运行环境设置不同样式类（控制显示内容）。
+
+## 辅助
 
 * 删除 Git 分支:
 
