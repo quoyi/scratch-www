@@ -138,6 +138,7 @@ class Navigation extends React.Component {
                     </li>
 
                     {/* 数据请求已结束 ? 根据请求结果显示 : 什么也不显示 */}
+                    { console.log(this.props.session) }
                     {this.props.session.status === sessionActions.Status.FETCHED ? (
                         // 用户已登录 ? 显示用户消息 : 显示注册登录按钮
                         this.props.user ? [
