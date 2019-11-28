@@ -198,6 +198,7 @@ FALLBACK=https://scratch.mit.edu yarn start
 
 * ~~所有~~ 页面组件经过 `src/lib/render.jsx` 处理，添加 `store`、`本地化` 和 `设置挂载点` 后在组件内自渲染（即调用 render 方法）。
 * ~~所有~~ 页面组件在自渲染时已应用 `Page` 组件包装，用于捕获系统错误（Sentry）、设置网站布局、根据运行环境设置不同样式类（控制显示内容）。
+* `module.exports` 相当于 `module.exports.<variable>`，等同于 `require` 引入变量。[参考](https://www.jianshu.com/p/beafd9ac9656)
 
 ## 辅助
 
