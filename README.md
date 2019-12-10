@@ -331,6 +331,7 @@ git push origin develop
 
 ```sh
 yarn
+yarn translate
 FALLBACK=https://scratch.mit.edu yarn start
 ```
 
