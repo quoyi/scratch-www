@@ -8487,6 +8487,15 @@ query-string@^4.1.0:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
+query-string@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.npm.taobao.org/query-string/download/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
+  integrity sha1-p4wBK3HBfgXy4/ojGd0zBoLvs8s=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    object-assign "^4.1.0"
+    strict-uri-encode "^1.0.0"
+
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -9350,10 +9359,10 @@ schema-utils@^2.0.0:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
 
-scratch-gui@0.1.0-prerelease.20191112225310:
-  version "0.1.0-prerelease.20191112225310"
-  resolved "https://registry.yarnpkg.com/scratch-gui/-/scratch-gui-0.1.0-prerelease.20191112225310.tgz#85592d8a286bdea5e1ee70c091d380986e0b36b9"
-  integrity sha512-OiaU4S5VzzxfZr5HYEif4fdGA9g2r7ThkHgZCvHYkQbMhPt/9JGEuy1T78ghb9alWv1pO/l5MVpiY8neykHGRw==
+scratch-gui@0.1.0-prerelease.20191205143447:
+  version "0.1.0-prerelease.20191205143447"
+  resolved "https://registry.npm.taobao.org/scratch-gui/download/scratch-gui-0.1.0-prerelease.20191205143447.tgz#66cc6e161c8aaa9b13a5282b9a0546b7dacb8bd7"
+  integrity sha1-ZsxuFhyKqpsTpSgrmgVGt9rLi9c=
 
 scratch-l10n@latest:
   version "3.6.20191119224037"

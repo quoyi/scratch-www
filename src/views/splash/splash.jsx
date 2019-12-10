@@ -272,7 +272,11 @@ const ConnectedSplash = connect(
 )(Splash);
 
 render(
-    <Page><ConnectedSplash /></Page>,
+    <Page
+        showDonorRecognition
+    >
+        <ConnectedSplash />
+    </Page>,
     document.getElementById('app'),
     {splash: splashActions.splashReducer}
 );
