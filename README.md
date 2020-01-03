@@ -332,6 +332,7 @@ git push origin develop
 ```sh
 yarn
 yarn translate
+yarn build
 FALLBACK=https://scratch.mit.edu yarn start
 ```
 
@@ -350,5 +351,3 @@ FALLBACK=https://scratch.mit.edu yarn start
   ```sh
   > for up in `git branch -l | grep greenkeeper`; do git branch -D $up; done
   ```
-  
-
